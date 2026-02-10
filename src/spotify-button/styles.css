@@ -1,0 +1,21 @@
+.root {
+  --button-size: 16px;
+
+  width: var(--button-size);
+  height: var(--button-size);
+  border-radius: 5px;
+  background: transparent;
+  position: relative;
+  display: grid;
+  grid-template-areas: 'stack';
+  /* overflow: hidden; */
+  place-items: center;
+  border: none;
+  color: #fff;
+  /* border: 1px solid #fff; */
+  border-radius: 50%;
+}
+
+.root svg {
+  /* width: 90%; */
+}
