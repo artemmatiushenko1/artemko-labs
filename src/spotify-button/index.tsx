@@ -12,7 +12,7 @@ function AddToFavoritesButton() {
   };
 
   return (
-    <MotionConfig transition={{ duration: 0.1 }}>
+    <MotionConfig transition={{ duration: 0.15 }}>
       <motion.button className="root" onClick={handleClick}>
         <AnimatePresence mode="wait">
           {/* Add icon */}
@@ -33,7 +33,9 @@ function AddToFavoritesButton() {
                     stroke="white"
                   />
                   <motion.circle
-                    exit={{ r: 2 }}
+                    initial={{ r: 0 }}
+                    animate={{ r: 9.5 }}
+                    exit={{ r: 0.2 }}
                     cx="12"
                     cy="12"
                     r="9.5"
@@ -47,6 +49,10 @@ function AddToFavoritesButton() {
                 cy="12"
                 r="11.5"
                 initial={{
+                  fill: '#21D25D',
+                  stroke: '#21D25D',
+                }}
+                animate={{
                   fill: 'var(--default-color)',
                   stroke: 'var(--default-color)',
                 }}
@@ -54,8 +60,9 @@ function AddToFavoritesButton() {
                 mask="url(#circle-mask)"
               />
               <motion.g
-                initial={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.2, opacity: 0.3 }}
+                initial={{ scale: 0, opacity: 0.3 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0, opacity: 0.3 }}
                 stroke-width="2"
                 stroke="currentColor"
                 stroke-linecap="round"
@@ -111,8 +118,25 @@ function AddToFavoritesButton() {
                   stroke-linejoin="round"
                   stroke="#000"
                   transition={{ type: 'spring' }}
-                  initial={{ scale: 0.2 }}
-                  animate={{ scale: 0.8 }}
+                  initial={{ scale: 0, opacity: 1 }}
+                  animate={{
+                    scale: 0.8,
+                    opacity: 1,
+                    transition: {
+                      type: 'spring',
+                      duration: 0.7,
+                      bounce: 0.4,
+                    },
+                  }}
+                  exit={{
+                    scale: 0,
+                    opacity: 0,
+                    transition: {
+                      type: 'tween',
+                      ease: 'linear',
+                      duration: 0.1,
+                    },
+                  }}
                 />
               </motion.svg>
               <motion.span
