@@ -14,8 +14,7 @@ function AddToFavoritesButton() {
   return (
     <MotionConfig transition={{ duration: 0.15 }}>
       <motion.button className="root" onClick={handleClick}>
-        <AnimatePresence mode="wait">
-          {/* Add icon */}
+        <AnimatePresence mode="wait" initial={false}>
           {state === 'default' && (
             <motion.svg
               key="default"
@@ -74,7 +73,6 @@ function AddToFavoritesButton() {
             </motion.svg>
           )}
 
-          {/* Check icon */}
           {state === 'liked' && (
             <React.Fragment key="liked">
               <motion.svg
@@ -82,7 +80,7 @@ function AddToFavoritesButton() {
                 xmlns="http://www.w3.org/2000/svg"
                 width="16px"
                 viewBox="0 0 24 24"
-                style={{ zIndex: 2 }}
+                style={{ zIndex: 2, position: 'relative' }}
               >
                 <defs>
                   <mask id="circle-mask">
@@ -141,7 +139,7 @@ function AddToFavoritesButton() {
               </motion.svg>
               <motion.span
                 className="ripple"
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
                 animate={{
                   x: ['-50%', null, null, null],
                   y: ['-50%', null, null, null],
@@ -152,6 +150,184 @@ function AddToFavoritesButton() {
               >
                 &nbsp;
               </motion.span>
+              <MotionConfig transition={{ duration: 0.5, ease: 'easeOut' }}>
+                <motion.span
+                  className="confetti-wrapper"
+                  initial={{ x: '-50%', y: '-50%' }}
+                  animate={{ opacity: 0, x: '-50%', y: 'calc(-50% + 0.5px)' }}
+                  transition={{ delay: 0.35 }}
+                >
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 12 10"
+                    fill="none"
+                    style={{ width: 1.5 }}
+                    animate={{
+                      x: -15,
+                      y: -2,
+                      rotate: -200,
+                    }}
+                  >
+                    <path
+                      d="M-2.78576e-07 0.598376L9.42676 1.04186e-05L11.7877 9.14593L2.36094 9.7443L-2.78576e-07 0.598376Z"
+                      fill="#00E787"
+                    />
+                  </motion.svg>
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 12 10"
+                    fill="none"
+                    style={{ width: 3 }}
+                    animate={{
+                      x: -12,
+                      y: -6,
+                      rotate: -200,
+                      scale: [null, null, null, 0.5],
+                    }}
+                  >
+                    <path
+                      d="M-2.78576e-07 0.598376L9.42676 1.04186e-05L11.7877 9.14593L2.36094 9.7443L-2.78576e-07 0.598376Z"
+                      fill="#00E787"
+                    />
+                  </motion.svg>
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 12 10"
+                    fill="none"
+                    style={{ width: 2 }}
+                    animate={{
+                      x: -12,
+                      y: -12,
+                      rotate: -200,
+                      scale: [null, null, null, 0.5],
+                    }}
+                  >
+                    <path
+                      d="M-2.78576e-07 0.598376L9.42676 1.04186e-05L11.7877 9.14593L2.36094 9.7443L-2.78576e-07 0.598376Z"
+                      fill="#EDFFF2"
+                    />
+                  </motion.svg>
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 12 10"
+                    fill="none"
+                    style={{ width: 1.5 }}
+                    animate={{
+                      x: -6,
+                      y: -12,
+                      rotate: -90,
+                      scale: [null, null, null, 0.5],
+                    }}
+                  >
+                    <path
+                      d="M-2.78576e-07 0.598376L9.42676 1.04186e-05L11.7877 9.14593L2.36094 9.7443L-2.78576e-07 0.598376Z"
+                      fill="#00E787"
+                    />
+                  </motion.svg>
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 12 10"
+                    fill="none"
+                    style={{ width: 1.5 }}
+                    animate={{
+                      x: -2,
+                      y: -10,
+                      rotate: -170,
+                      scale: [null, null, null, 0.5],
+                    }}
+                  >
+                    <path
+                      d="M-2.78576e-07 0.598376L9.42676 1.04186e-05L11.7877 9.14593L2.36094 9.7443L-2.78576e-07 0.598376Z"
+                      fill="#00E787"
+                    />
+                  </motion.svg>
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 12 10"
+                    fill="none"
+                    style={{ width: 3 }}
+                    animate={{
+                      x: 2,
+                      y: -14,
+                      rotate: 170,
+                      scale: [null, null, null, 0.5],
+                    }}
+                  >
+                    <path
+                      d="M-2.78576e-07 0.598376L9.42676 1.04186e-05L11.7877 9.14593L2.36094 9.7443L-2.78576e-07 0.598376Z"
+                      fill="#EDFFF2"
+                    />
+                  </motion.svg>
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 12 10"
+                    fill="none"
+                    style={{ width: 1.5 }}
+                    animate={{
+                      x: 7,
+                      y: -9,
+                      rotate: 180,
+                      scale: [null, null, null, 0.5],
+                    }}
+                  >
+                    <path
+                      d="M-2.78576e-07 0.598376L9.42676 1.04186e-05L11.7877 9.14593L2.36094 9.7443L-2.78576e-07 0.598376Z"
+                      fill="#00E787"
+                    />
+                  </motion.svg>
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 12 10"
+                    fill="none"
+                    style={{ width: 1.5 }}
+                    animate={{
+                      x: 8,
+                      y: -14,
+                      rotate: 200,
+                      scale: [null, null, null, 0.5],
+                    }}
+                  >
+                    <path
+                      d="M-2.78576e-07 0.598376L9.42676 1.04186e-05L11.7877 9.14593L2.36094 9.7443L-2.78576e-07 0.598376Z"
+                      fill="#00E787"
+                    />
+                  </motion.svg>
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 12 10"
+                    fill="none"
+                    style={{ width: 3 }}
+                    animate={{
+                      x: 13,
+                      y: -6,
+                      rotate: 90,
+                      scale: [null, null, null, 0.5],
+                    }}
+                  >
+                    <path
+                      d="M-2.78576e-07 0.598376L9.42676 1.04186e-05L11.7877 9.14593L2.36094 9.7443L-2.78576e-07 0.598376Z"
+                      fill="#EDFFF2"
+                    />
+                  </motion.svg>
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 12 10"
+                    fill="none"
+                    style={{ width: 1.5 }}
+                    animate={{
+                      x: 10,
+                      y: 0,
+                      rotate: 180,
+                      scale: [null, null, null, 0.5],
+                    }}
+                  >
+                    <path
+                      d="M-2.78576e-07 0.598376L9.42676 1.04186e-05L11.7877 9.14593L2.36094 9.7443L-2.78576e-07 0.598376Z"
+                      fill="#00E787"
+                    />
+                  </motion.svg>
+                </motion.span>
+              </MotionConfig>
             </React.Fragment>
           )}
         </AnimatePresence>
