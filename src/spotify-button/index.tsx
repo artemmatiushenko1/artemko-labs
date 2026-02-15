@@ -13,7 +13,7 @@ function AddToFavoritesButton() {
 
   return (
     <MotionConfig transition={{ duration: 0.15 }}>
-      <motion.button className="root" onClick={handleClick}>
+      <button className="root" onClick={handleClick}>
         <AnimatePresence mode="wait" initial={false}>
           {state === 'default' && (
             <motion.svg
@@ -137,6 +137,7 @@ function AddToFavoritesButton() {
                   }}
                 />
               </motion.svg>
+              {/* TODO: make ripple transition look better */}
               <motion.span
                 className="ripple"
                 transition={{ duration: 0.5, delay: 0.1 }}
@@ -331,7 +332,7 @@ function AddToFavoritesButton() {
             </React.Fragment>
           )}
         </AnimatePresence>
-      </motion.button>
+      </button>
     </MotionConfig>
   );
 }

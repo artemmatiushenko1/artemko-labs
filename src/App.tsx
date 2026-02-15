@@ -8,17 +8,15 @@ function App() {
         <img
           width={56}
           height={56}
-          src="https://i.scdn.co/image/ab67616d0000b27348433bb115b85cc2246f16c1"
+          src="https://i.scdn.co/image/ab67616d0000b27333c9358e63089e6a16c716e7"
           alt=""
         />
       </div>
       <div className="meta">
-        <h1>Vodka Cranberry</h1>
-        <p>Conan Gray</p>
+        <h1>Take A Drive</h1>
+        <p>Rex Orange County</p>
       </div>
-      <div>
-        <AddToFavoritesButton />
-      </div>
+      <AddToFavoritesButton />
     </div>
   );
 }
