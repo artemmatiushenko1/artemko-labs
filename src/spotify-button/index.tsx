@@ -3,6 +3,7 @@ import './styles.css';
 import React, { useState } from 'react';
 import DefaultIcon from './default-icon';
 import Confetti from './confetti';
+import Ripple from './ripple';
 
 type State = 'liked' | 'default';
 
@@ -83,20 +84,7 @@ function AddToFavoritesButton() {
                   }}
                 />
               </motion.svg>
-              {/* TODO: make ripple transition look better */}
-              <motion.span
-                className="ripple"
-                transition={{ duration: 0.5, delay: 0.1 }}
-                animate={{
-                  x: ['-50%', null, null, null],
-                  y: ['-50%', null, null, null],
-                  scale: ['100%', '120%', '140%', '160%'],
-                  opacity: [1, 1, 1, 1, 0],
-                  borderWidth: [2, 2, 1, 0.5, 0],
-                }}
-              >
-                &nbsp;
-              </motion.span>
+              <Ripple />
               <Confetti />
             </React.Fragment>
           )}
